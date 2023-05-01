@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class AudioSystemSO : MonoBehaviour
 {
-    
+    [SerializeField] private AudioSource audioSource;
+
+    public void PlayDamageSound()
+    {
+        audioSource.Play();
+    }
 }

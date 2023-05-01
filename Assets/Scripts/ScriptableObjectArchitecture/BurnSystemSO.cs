@@ -14,13 +14,18 @@ public class BurnSystemSO : MonoBehaviour
     // Damage on tick
     private int tickDamage = 1;
 
+    private bool burning = false;
+
     public void StartBurning()
     {
-        StartCoroutine(BurnOverTime(tickTime, tickDamage));
+        if(!burning)
+            StartCoroutine(BurnOverTime(tickTime, tickDamage));
     }
 
     private IEnumerator BurnOverTime(float time, int damage)
     {
+        burning = true;
+        
         while (affectedHealth.Value > 0)
         {
             affectedHealth.Value -= damage;
@@ -29,7 +34,9 @@ public class BurnSystemSO : MonoBehaviour
             yield return new WaitForSeconds(time);
         }
 
+        burning = false;
         affectedHealth.SetValue(0);
+        
         // Throw dead event
     }
 }
