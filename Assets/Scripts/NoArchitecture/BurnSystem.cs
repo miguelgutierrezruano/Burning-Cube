@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Quitar referencias en NoArchitecture, quitar eventos en SOs
 public class BurnSystem : MonoBehaviour
 {
     [SerializeField] private BuddyHealth buddyHealth;
