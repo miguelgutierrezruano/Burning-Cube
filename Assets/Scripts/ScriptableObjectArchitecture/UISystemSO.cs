@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UISystemSO : MonoBehaviour
 {
-    // Invoke event StartFire
     [SerializeField] private IntVariable health;
     [SerializeField] private IntVariable initialHealth;
 
