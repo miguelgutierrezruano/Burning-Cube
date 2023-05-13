@@ -8,6 +8,7 @@ public class BurnSystem : MonoBehaviour
     [SerializeField] private BuddyHealth buddyHealth;
     [SerializeField] private AudioSystem audioSystem;
     [SerializeField] private UISystem uiSystem;
+    [SerializeField] private FireEffect fireEffect;
 
     // Time to apply damage
     private float tickTime = 1f;
@@ -20,7 +21,10 @@ public class BurnSystem : MonoBehaviour
     public void StartBurning()
     {
         if (!burning)
+        {
             StartCoroutine(BurnOverTime(tickTime, tickDamage));
+            fireEffect.SetFireActive(true);
+        }
     }
 
     private IEnumerator BurnOverTime(float time, int damage)
@@ -34,10 +38,13 @@ public class BurnSystem : MonoBehaviour
             uiSystem.UpdateUI();
             audioSystem.PlayDamageSound();
 
-            yield return new WaitForSeconds(time);
+            if (buddyHealth.hp > 0)
+                yield return new WaitForSeconds(time);
         }
 
         burning = false;
         buddyHealth.hp = 0;
+        buddyHealth.gameObject.SetActive(false);
+        fireEffect.SetFireActive(false);
     }
 }

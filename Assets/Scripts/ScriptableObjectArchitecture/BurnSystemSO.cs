@@ -7,6 +7,7 @@ public class BurnSystemSO : MonoBehaviour
     [SerializeField] private IntVariable affectedHealth;
 
     [SerializeField] private GameEvent onHitEvent;
+    [SerializeField] private GameEvent onDeathEvent;
 
     // Time to apply damage
     private float tickTime = 1f;
@@ -31,12 +32,12 @@ public class BurnSystemSO : MonoBehaviour
             affectedHealth.Value -= damage;
             onHitEvent.Raise();
 
-            yield return new WaitForSeconds(time);
+            if(affectedHealth.Value > 0)
+                yield return new WaitForSeconds(time);
         }
 
         burning = false;
         affectedHealth.SetValue(0);
-        
-        // Throw dead event
+        onDeathEvent.Raise();
     }
 }
