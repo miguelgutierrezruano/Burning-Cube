@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Quitar referencias en NoArchitecture, quitar eventos en SOs
 public class BurnSystem : MonoBehaviour
 {
     [SerializeField] private BuddyHealth buddyHealth;
-    [SerializeField] private AudioSystem audioSystem;
-    [SerializeField] private UISystem uiSystem;
     [SerializeField] private FireEffect fireEffect;
 
     // Time to apply damage
@@ -34,9 +31,6 @@ public class BurnSystem : MonoBehaviour
         while (buddyHealth.hp > 0)
         {
             buddyHealth.hp -= damage;
-
-            uiSystem.UpdateUI();
-            audioSystem.PlayDamageSound();
 
             if (buddyHealth.hp > 0)
                 yield return new WaitForSeconds(time);
