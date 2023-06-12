@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioSystemSO : MonoBehaviour
+namespace so
 {
-    [SerializeField] private AudioSource audioSource;
-
-    public void PlayDamageSound()
+    public class AudioSystemSO : MonoBehaviour
     {
-        audioSource.Play();
+        [SerializeField] private AudioSource audioSource;
+
+        public void PlayDamageSound()
+        {
+            audioSource.Play();
+        }
     }
 }

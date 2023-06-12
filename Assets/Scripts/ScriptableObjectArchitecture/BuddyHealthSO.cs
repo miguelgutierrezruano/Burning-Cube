@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuddyHealthSO : MonoBehaviour
+namespace so
 {
-    // Health variable
-    [SerializeField] private IntVariable health;
-    [SerializeField] private IntVariable initialHealth;
-
-    private void Start()
+    public class BuddyHealthSO : MonoBehaviour
     {
-        health.Value = initialHealth.Value;
+        // Health variable
+        [SerializeField] private IntVariable health;
+        [SerializeField] private IntVariable initialHealth;
+
+        private void Start()
+        {
+            health.Value = initialHealth.Value;
+        }
     }
 }
+

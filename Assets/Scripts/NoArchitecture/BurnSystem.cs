@@ -7,6 +7,9 @@ public class BurnSystem : MonoBehaviour
     [SerializeField] private BuddyHealth buddyHealth;
     [SerializeField] private FireEffect fireEffect;
 
+    [SerializeField] private AudioSystem audioSystem;
+    [SerializeField] private UISystem    uiSystem;
+
     // Time to apply damage
     private float tickTime = 1f;
 
@@ -31,6 +34,9 @@ public class BurnSystem : MonoBehaviour
         while (buddyHealth.hp > 0)
         {
             buddyHealth.hp -= damage;
+
+            audioSystem.PlayDamageSound();
+            uiSystem.UpdateUI();
 
             if (buddyHealth.hp > 0)
                 yield return new WaitForSeconds(time);

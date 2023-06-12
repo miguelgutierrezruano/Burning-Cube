@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UISystemSO : MonoBehaviour
+namespace so
 {
-    [SerializeField] private IntVariable health;
-    [SerializeField] private IntVariable initialHealth;
-
-    [SerializeField] private Image healthBar;
-    
-    public void UpdateUI()
+    public class UISystemSO : MonoBehaviour
     {
-        healthBar.fillAmount = (float)health.Value / initialHealth.Value;
+        [SerializeField] private IntVariable health;
+        [SerializeField] private IntVariable initialHealth;
+
+        [SerializeField] private Image healthBar;
+    
+        public void UpdateUI()
+        {
+            healthBar.fillAmount = (float)health.Value / initialHealth.Value;
+        }
     }
 }
+

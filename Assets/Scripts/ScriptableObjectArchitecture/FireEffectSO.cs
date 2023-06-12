@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireEffectSO : MonoBehaviour
+namespace so
 {
-    [SerializeField] private GameObject fireEffect;
-
-    public void SetFireActive(bool active)
+    public class FireEffectSO : MonoBehaviour
     {
-        fireEffect.SetActive(active);
+        [SerializeField] private GameObject fireEffect;
+
+        public void SetFireActive(bool active)
+        {
+            fireEffect.SetActive(active);
+        }
     }
 }
+
+
