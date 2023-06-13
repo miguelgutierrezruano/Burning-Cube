@@ -4,11 +4,24 @@ using UnityEngine;
 
 namespace so
 {
+    /// <summary>
+    /// BurningSystem class decreases an IntVariable over time when StartBurning method is called
+    /// </summary>
     public class BurnSystemSO : MonoBehaviour
     {
+        /// <summary>
+        /// IntVariable which should be decreased
+        /// </summary>
         [SerializeField] private IntVariable affectedHealth;
 
+        /// <summary>
+        /// Event thrown on every hit of the BurningSystem
+        /// </summary>
         [SerializeField] private GameEvent onHitEvent;
+
+        /// <summary>
+        /// Event thrown when affectedHealth goes below 0
+        /// </summary>
         [SerializeField] private GameEvent onDeathEvent;
 
         // Time to apply damage

@@ -2,13 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// BurningSystem class damages a BuddyHealth object when StartBurning method is called
+/// </summary>
 public class BurnSystem : MonoBehaviour
 {
+    /// <summary>
+    /// Affected BuddyHealth
+    /// </summary>
     [SerializeField] private BuddyHealth buddyHealth;
     [SerializeField] private FireEffect fireEffect;
 
+    /// <summary>
+    /// AudioSystem to play damage sounds
+    /// </summary>
     [SerializeField] private AudioSystem audioSystem;
-    [SerializeField] private UISystem    uiSystem;
+
+    /// <summary>
+    /// UI system to update game UI
+    /// </summary>
+    [SerializeField] private UISystem uiSystem;
 
     // Time to apply damage
     private float tickTime = 1f;

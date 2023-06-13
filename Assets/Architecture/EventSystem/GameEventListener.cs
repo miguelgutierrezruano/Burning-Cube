@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
 
+/* This is a C# class for a game event listener that responds to a specific game event and invokes a
+Unity event when the event is raised. */
 public class GameEventListener: MonoBehaviour
 {
     public int priority;

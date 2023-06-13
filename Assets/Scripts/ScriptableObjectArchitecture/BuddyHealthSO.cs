@@ -4,10 +4,19 @@ using UnityEngine;
 
 namespace so
 {
+    /// <summary>
+    /// The BuddyHealthSO class defines the current Health Points of an object
+    /// </summary>
     public class BuddyHealthSO : MonoBehaviour
     {
-        // Health variable
+        /// <summary>
+        /// IntVariable representing the health of an object
+        /// </summary>
         [SerializeField] private IntVariable health;
+
+        /// <summary>
+        /// IntVariable representing the starting health of an object
+        /// </summary>
         [SerializeField] private IntVariable initialHealth;
 
         private void Start()
