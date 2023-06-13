@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace so
 {
+    /// <summary>
+    /// Class to manage fire enable and disable
+    /// </summary>
     public class FireEffectSO : MonoBehaviour
     {
         [SerializeField] private GameObject fireEffect;

@@ -5,8 +5,10 @@ using UnityEditor;
 
 [CreateAssetMenu(fileName = "new Game Event", menuName = "Events/Game Event")]
 
-/* This is a C# script for a game event that can be raised and listened to by multiple listeners, with
-the ability to register and unregister listeners and a custom editor for testing. */
+/// <summary>
+/// Script for a game event that can be raised and listened to by multiple listeners, with
+/// the ability to register and unregister listeners and a custom editor for testing
+/// </summary>
 public class GameEvent : ScriptableObject
 {
     private List<GameEventListener> listeners = new List<GameEventListener>();
